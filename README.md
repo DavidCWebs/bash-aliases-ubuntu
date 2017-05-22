@@ -2,6 +2,12 @@
 Some handy aliases - add to `~/.bash_aliases` and require this in `~/.bashrc`.
 
 ~~~
+# Common variables
+# Note that if the alias is enclosed with double quotation marks, variables are
+# expanded when the alias is created.
+# ==============================================================================
+HOME_IP=1.2.3.4
+
 # Apache
 # ==============================================================================
 alias restart-apache="sudo /etc/init.d/apache2 restart"
@@ -24,5 +30,5 @@ alias reload-fail2ban="fail2ban-client reload"
 alias stop-fail2ban="fail2ban-client stop"
 alias start-fail2ban="fail2ban-client start"
 alias status-fail2ban="fail2ban-client status"
-alias unban-home="sudo fail2ban-client set wordpress-soft unbanip X.X.X.X; fail2ban-client set wordpress-hard unbanip X.X.X.X"
+alias unban-home="sudo fail2ban-client set wordpress-soft unbanip $HOME_IP; fail2ban-client set wordpress-hard unbanip $HOME_IP"
 ~~~
